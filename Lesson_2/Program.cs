@@ -52,6 +52,7 @@ namespace вторая_лаба2
                 Print(stroka);
                 byte flag = 0;
                 bool fl = true;
+                bool net_v_comente = false;
                 Console.WriteLine("\nВведите прибор который хотите найти:");
                 do
                 {
@@ -100,6 +101,7 @@ namespace вторая_лаба2
                             else
                                 stroka[i] = temp_2[0] + " " + temp_2[_1] + com;
                             Console.WriteLine($"\nЭто новое вырожение:\n\t{stroka[i]}\n");
+                            net_v_comente = true;
                             temp.Clear();
                             temp_2.Clear();
                             File.WriteAllLines(s, stroka);
@@ -124,10 +126,13 @@ namespace вторая_лаба2
                             else
                                 stroka[i] = stroka[i].Substring(0, faind_objeckt.Length + 1) + temp_2[_1] + " " + com;
                         Console.WriteLine($"\nЭто новое вырожение:\n\t{stroka[i]}");
+                        net_v_comente = true;
                         temp.Clear();
                         temp_2.Clear();
                         File.WriteAllLines(s, stroka);
                         flag = 1;
+                        if (net_v_comente) continue;
+                        
                     }
                 }
                 if (flag == 0)
