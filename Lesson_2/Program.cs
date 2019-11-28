@@ -119,7 +119,6 @@ namespace вторая_лаба2
                         {
                             temp_2[_1] = Console.ReadLine();
                         } while (!Corect_Input(ref temp_2, ref _1));
-                        if (temp_2[_1].IndexOf(' ') != -1)
                             if (_1 == 0)
                                 stroka[i] = temp_2[0] + " " + com;
                             else
