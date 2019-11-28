@@ -175,7 +175,7 @@ namespace вторая_лаба2
         }
 
         static bool Corect_Input(ref string ch)
-        {
+        {     
             if (ch.Length == 0 && ch.StartsWith(""))
             {
                 Console.WriteLine("Введено пустое значение, чего быть не может, повторите ввод");
@@ -191,6 +191,17 @@ namespace вторая_лаба2
         }
         static bool Corect_Input(ref List<string> ch, ref int i)
         {
+            string temp = ch[i];
+            for (int g = 0; g < ch[i].Length+1; g++)
+            {
+                if (temp.IndexOf(' ') == 0)
+                    temp = temp.Substring(temp.IndexOf(' ')+1);
+                if (temp.Length == 0)
+                {
+                    Console.WriteLine("Введено пустое значение (Одни лишь пробелы), чего быть не может, повторите ввод");
+                    return false;
+                }
+            }
             if (ch[i].Length == 0 && ch[i].StartsWith(""))
             {
                 Console.WriteLine("Введено пустое значение, чего быть не может, повторите ввод");
